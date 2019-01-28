@@ -1,0 +1,9 @@
+services:
+    Spiroski\Domain\Events\BasicDispatcher: ~
+
+    Spiroski\Domain\Events\Dispatcher:
+        alias: Spiroski\Domain\Events\BasicDispatcher
+
+    spiroski_domain_events_dispatcher:
+        alias: Spiroski\Domain\Events\BasicDispatcher
+        public: true

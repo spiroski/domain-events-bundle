@@ -1,0 +1,33 @@
+{
+    "name": "spiroski/domain-events-bundle",
+    "description": "Bundle to integrate with spiroski/domain-events",
+    "type": "symfony-bundle",
+    "license": [
+        "MIT"
+    ],
+    "authors": [
+        {
+            "name": "Dimitar Spiroski",
+            "email": "dimitar.spiroski@gmail.com"
+        }
+    ],
+    "keywords": [
+        "domain",
+        "events",
+        "bundle",
+        "symfony"
+    ],
+    "require": {
+        "php": ">=7.0",
+        "spiroski/domain-events": "^0.0.1",
+        "symfony/config": "^3.4|^4.0",
+        "symfony/dependency-injection": "^3.4|^4.0",
+        "symfony/http-kernel": "^3.4|^4.0",
+        "symfony/yaml": "^3.4|^4.0"
+    },
+    "autoload" : {
+        "psr-4" : {
+            "Spiroski\\Domain\\Events\\Bundle\\" : "src/"
+        }
+    }
+}
