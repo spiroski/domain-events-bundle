@@ -1,9 +1,12 @@
 services:
+    Spiroski\Domain\Events\Bundle\DebugDispatcher:
+        autowire: true
+
     Spiroski\Domain\Events\BasicDispatcher: ~
 
     Spiroski\Domain\Events\Dispatcher:
-        alias: Spiroski\Domain\Events\BasicDispatcher
+        alias: Spiroski\Domain\Events\Bundle\DebugDispatcher
 
     spiroski_domain_events_dispatcher:
-        alias: Spiroski\Domain\Events\BasicDispatcher
+        alias: Spiroski\Domain\Events\Bundle\DebugDispatcher
         public: true

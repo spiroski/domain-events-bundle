@@ -18,8 +18,8 @@
         "symfony"
     ],
     "require": {
-        "php": ">=7.0",
-        "spiroski/domain-events": "^0.0.1",
+        "php": ">=7.1",
+        "spiroski/domain-events": "dev-master@dev",
         "symfony/config": "^3.4|^4.0",
         "symfony/dependency-injection": "^3.4|^4.0",
         "symfony/http-kernel": "^3.4|^4.0",

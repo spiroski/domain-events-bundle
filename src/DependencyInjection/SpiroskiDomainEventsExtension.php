@@ -1,11 +1,14 @@
 <?php namespace Spiroski\Domain\Events\Bundle\DependencyInjection;
 
+use Spiroski\Domain\Events\Bundle\DependencyInjection\Compiler\ListenerPass;
+use Spiroski\Domain\Events\Bundle\DependencyInjection\Compiler\SubscriberPass;
 use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader;
 
-class SpiroskiDomainEventsExtension extends Extension
+class SpiroskiDomainEventsExtension extends Extension implements CompilerPassInterface
 {
 
     /**
@@ -20,5 +23,15 @@ class SpiroskiDomainEventsExtension extends Extension
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yml');
+    }
+
+
+    /**
+     * You can modify the container here before it is dumped to PHP code.
+     */
+    public function process(ContainerBuilder $container)
+    {
+        $container->addCompilerPass(new ListenerPass());
+        $container->addCompilerPass(new SubscriberPass());
     }
 }
